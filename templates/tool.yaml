@@ -1,0 +1,34 @@
+# Copy this file to tools/<your-tool>.yaml (lowercase letters, digits and hyphens).
+kind: tool
+name: My Tool
+# One or two sentences in your own words. Don't copy text from other directories.
+summary: What it does and who it helps, in plain language.
+# One of: agents, llm-apps, coding, local-llms, chat, image, video, speech, documents, search,
+# vector-databases, ml-platforms, robotics, browser-automation, no-code, learning,
+# mcp-servers, education, other
+category: education
+tags: [tutoring, reading]
+links:
+  repository: https://github.com/you/my-tool
+  website: https://my-tool.example
+license: MIT
+skill_level: beginner
+# Price and usage for each type of user. price: free | paid | contact | unknown.
+# For paid, also give amount, currency (ISO code) and period (month | year | one-time | per-use).
+pricing:
+  education:
+    price: free
+    usage: Free for students, teachers, schools and non-profits.
+  individuals:
+    price: free
+    usage: Up to 100 requests a day.
+  business:
+    price: paid
+    amount: 19
+    currency: USD
+    period: month
+    usage: Per seat, unlimited requests.
+maintainer:
+  name: Your Name
+  github: your-github-username
+added: 2026-10-07

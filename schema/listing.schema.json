@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/mawadao/registry/schema/listing.schema.json",
+  "title": "mawaDao listing",
+  "description": "One AI tool or agent listed on mawaDao. The file name (without .yaml) is the listing's slug.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["kind", "name", "summary", "category", "links", "pricing", "added"],
+  "properties": {
+    "kind": {
+      "enum": ["tool", "agent"],
+      "description": "tool: an AI tool, framework or service people can learn about. agent: a mawaDao agent offered in the marketplace."
+    },
+    "name": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "summary": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 200,
+      "description": "One or two sentences in your own words."
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 4000,
+      "description": "Optional longer Markdown description."
+    },
+    "category": { "$ref": "#/$defs/category" },
+    "tags": {
+      "type": "array",
+      "maxItems": 10,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,39}$" }
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "anyOf": [{ "required": ["repository"] }, { "required": ["website"] }],
+      "properties": {
+        "repository": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "website": { "type": "string", "format": "uri", "pattern": "^https?://" },
+        "docs": { "type": "string", "format": "uri", "pattern": "^https?://" }
+      }
+    },
+    "license": {
+      "type": "string",
+      "description": "SPDX identifier (MIT, Apache-2.0, …), or \"proprietary\"."
+    },
+    "skill_level": { "enum": ["beginner", "intermediate", "advanced"] },
+    "pricing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["education", "individuals", "business"],
+      "description": "Price and usage for each type of user.",
+      "properties": {
+        "education": {
+          "$ref": "#/$defs/plan",
+          "description": "Students, teachers, schools, orphanages and non-profits."
+        },
+        "individuals": {
+          "$ref": "#/$defs/plan",
+          "description": "People using it for themselves."
+        },
+        "business": {
+          "$ref": "#/$defs/plan",
+          "description": "Companies and businesses. Paid plans here support the developers."
+        }
+      }
+    },
+    "agent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["runtime", "audience", "languages"],
+      "description": "Required for kind: agent.",
+      "properties": {
+        "runtime": { "enum": ["mawadao-agent-gateway", "mawadao-agent-core", "other"] },
+        "audience": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Who it is for, for example \"Primary pupils learning to read (ages 6–9)\"."
+        },
+        "languages": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})?$" },
+          "description": "BCP 47 language codes."
+        },
+        "data_collected": {
+          "type": "string",
+          "maxLength": 500,
+          "description": "What personal data the agent stores or sends, or \"none\"."
+        }
+      }
+    },
+    "maintainer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["github"],
+      "properties": {
+        "name": { "type": "string", "maxLength": 80 },
+        "github": { "type": "string", "pattern": "^[A-Za-z0-9-]{1,39}$" }
+      }
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Set by community reviewers, not by the person listing.",
+      "properties": {
+        "reviewed": { "type": "boolean" },
+        "reviewed_on": { "type": "string", "format": "date" }
+      }
+    },
+    "added": { "type": "string", "format": "date" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "kind": { "const": "agent" } } },
+      "then": { "required": ["agent", "maintainer"] }
+    }
+  ],
+  "$defs": {
+    "category": {
+      "enum": [
+        "agents", "llm-apps", "coding", "local-llms", "chat", "image", "video", "speech",
+        "documents", "search", "vector-databases", "ml-platforms", "robotics",
+        "browser-automation", "no-code", "learning", "mcp-servers", "education", "other"
+      ]
+    },
+    "plan": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["price"],
+      "properties": {
+        "price": {
+          "enum": ["free", "paid", "contact", "unknown"],
+          "description": "free; paid (give amount); contact (ask the developer); unknown (not published)."
+        },
+        "amount": { "type": "number", "minimum": 0 },
+        "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
+        "period": { "enum": ["month", "year", "one-time", "per-use"] },
+        "usage": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Limits or terms, for example \"Up to 5 seats and 10,000 messages a month\"."
+        }
+      },
+      "if": { "properties": { "price": { "const": "paid" } } },
+      "then": { "required": ["amount", "currency", "period"] }
+    }
+  }
+}
