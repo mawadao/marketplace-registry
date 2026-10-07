@@ -26,9 +26,10 @@ Each listing shows its price and usage limits for three types of user:
 | `individuals` | People using it for themselves |
 | `business` | Companies and businesses |
 
-**Agents must be free for education.** Developers may charge businesses (and individuals if
-they choose); that income supports the developers who build for mawaDao. Listing is always free,
-and mawaDao takes no commission on educational use.
+**Agents must be free for education.** Listing is always free, and mawaDao takes no commission
+on educational use. How larger organisations pay for agents is still being decided with the
+community, so for now list `business` as `price: contact` if you don't offer it free. Questions:
+[mawadao.com/#contact](https://mawadao.com/#contact).
 
 ## List your tool or agent
 

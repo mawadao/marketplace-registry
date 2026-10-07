@@ -8,20 +8,17 @@ tags: [literacy, primary]
 links:
   repository: https://github.com/you/reading-buddy
 license: Apache-2.0
-# Agents must be free for education. Businesses can pay, which supports you as the developer.
+# Agents must be free for education. Pricing for larger organisations is still being decided
+# with the community; until then use free or contact for business.
 pricing:
   education:
     price: free
     usage: Unlimited for schools, orphanages, educators and students.
   individuals:
     price: free
-    usage: 20 sessions a month.
   business:
-    price: paid
-    amount: 10
-    currency: USD
-    period: month
-    usage: Per organisation, unlimited sessions.
+    price: contact
+    usage: Ask the developer.
 agent:
   runtime: mawadao-agent-gateway   # or mawadao-agent-core, or other
   audience: Primary pupils learning to read (ages 6–9)
