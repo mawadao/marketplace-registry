@@ -4,16 +4,19 @@ The open list of AI tools and agents shown on mawaDao. People, students and educ
 explore and learn about new and trending AI tools; developers use it to list their tools and to
 offer their agents in the mawaDao marketplace.
 
-mawaDao is a non-profit, community-owned marketplace for responsible AI agents, built to bring
-quality education to underserved children and orphans.
+mawaDao brings together agentic AI and blockchain technologies to create an open,
+community-owned ecosystem for education. There are no listing fees, no creation fees and no
+commissions. When a product earns money, 75% goes to the community who built it and 25% goes
+to mawa to educate deserving children, orphans and street children.
 
 ## What's in it
 
-| Folder | What | Shown on |
-| --- | --- | --- |
-| [`tools/`](tools) | AI tools, frameworks, MCP servers and services | Explore AI tools on mawaDao |
-| [`agents/`](agents) | mawas, after community review | The mawaDao marketplace |
+| Folder | What |
+| --- | --- |
+| [`tools/`](tools) | AI tools, frameworks, MCP servers and services |
+| [`agents/`](agents) | mawas, after community review |
 
+Both are merged into one catalog on [mawadao.com/marketplace](https://mawadao.com/marketplace).
 Every listing is one YAML file and follows [`schema/listing.schema.json`](schema/listing.schema.json).
 
 ## Pricing by type of user
@@ -26,9 +29,10 @@ Each listing shows its price and usage limits for three types of user:
 | `individuals` | People using it for themselves |
 | `business` | Companies and businesses |
 
-**Agents must be free for education.** Listing is always free, and mawaDao takes no commission
-on educational use. How larger organisations pay for agents is still being decided with the
-community, so for now list `business` as `price: contact` if you don't offer it free. Questions:
+**Agents must be free for education.** Listing is always free, and there is no commission on
+educational use. How larger organisations pay for agents is still being decided with the
+community, so for now list `business` as `price: contact` if you don't offer it free. When an
+agent is monetised, mawaDao's 75/25 revenue split applies. Questions:
 [mawadao.com/#contact](https://mawadao.com/#contact).
 
 ## List your tool or agent
