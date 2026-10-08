@@ -36,6 +36,11 @@ jobs:
           else
             python scripts/build_index.py --previous https://mawadao.github.io/marketplace-registry/index.json
           fi
+      - name: Sync to Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: python scripts/sync_supabase.py dist/index.json
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

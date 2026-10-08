@@ -67,6 +67,21 @@ https://mawadao.github.io/marketplace-registry/index.json
 
 "Trending" is the number of stars a project gained since the previous weekly build.
 
+## Database sync
+
+The same workflow run also calls `scripts/sync_supabase.py`, which upserts every listing in
+`dist/index.json` into the `marketplace_listings` table in mawaDao's Supabase project, and
+deletes any row whose listing is no longer there. A merged pull request that adds a listing adds
+its row; a merged pull request that removes one removes its row. It needs the `SUPABASE_URL` and
+`SUPABASE_SERVICE_ROLE_KEY` repository secrets; without the key it's a no-op, so this step can't
+break the index or the Pages deploy.
+
+## Review before merge
+
+Pull requests need a passing `validate` check and one approving review before they can merge to
+`main` (branch protection on `main`), since a merge is what publishes a listing and writes it to
+the database.
+
 ## Licence
 
 Apache 2.0. See [LICENSE](LICENSE).
