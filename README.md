@@ -12,7 +12,7 @@ quality education to underserved children and orphans.
 | Folder | What | Shown on |
 | --- | --- | --- |
 | [`tools/`](tools) | AI tools, frameworks, MCP servers and services | Explore AI tools on mawaDao |
-| [`agents/`](agents) | mawaDao agents, after community review | The mawaDao marketplace |
+| [`agents/`](agents) | mawas, after community review | The mawaDao marketplace |
 
 Every listing is one YAML file and follows [`schema/listing.schema.json`](schema/listing.schema.json).
 

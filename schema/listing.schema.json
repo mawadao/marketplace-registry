@@ -9,7 +9,7 @@
   "properties": {
     "kind": {
       "enum": ["tool", "agent"],
-      "description": "tool: an AI tool, framework or service people can learn about. agent: a mawaDao agent offered in the marketplace."
+      "description": "tool: an AI tool, framework or service people can learn about. agent: a mawa offered in the marketplace."
     },
     "name": { "type": "string", "minLength": 1, "maxLength": 80 },
     "summary": {
@@ -71,7 +71,7 @@
       "required": ["runtime", "audience", "languages"],
       "description": "Required for kind: agent.",
       "properties": {
-        "runtime": { "enum": ["mawadao-agent-gateway", "mawadao-agent-core", "other"] },
+        "runtime": { "enum": ["mawa-gateway", "mawa-core", "other"] },
         "audience": {
           "type": "string",
           "maxLength": 200,
