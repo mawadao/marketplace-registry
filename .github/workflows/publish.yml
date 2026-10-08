@@ -32,9 +32,9 @@ jobs:
         run: |
           # Compare with the last weekly build only, so pushes in between don't reset "trending".
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            python scripts/build_index.py --previous https://mawadao.github.io/registry/index.json --weekly
+            python scripts/build_index.py --previous https://mawadao.github.io/marketplace-registry/index.json --weekly
           else
-            python scripts/build_index.py --previous https://mawadao.github.io/registry/index.json
+            python scripts/build_index.py --previous https://mawadao.github.io/marketplace-registry/index.json
           fi
       - uses: actions/upload-pages-artifact@v3
         with:

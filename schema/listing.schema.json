@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/mawadao/registry/schema/listing.schema.json",
+  "$id": "https://github.com/mawadao/marketplace-registry/schema/listing.schema.json",
   "title": "mawaDao listing",
   "description": "One AI tool or agent listed on mawaDao. The file name (without .yaml) is the listing's slug.",
   "type": "object",

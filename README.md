@@ -1,4 +1,4 @@
-# mawaDao registry
+# mawaDao marketplace registry
 
 The open list of AI tools and agents shown on mawaDao. People, students and educators use it to
 explore and learn about new and trending AI tools; developers use it to list their tools and to
@@ -62,7 +62,7 @@ forks, language, last activity) and writes `dist/index.json`. The publish workfl
 merge and once a week, and serves the result from GitHub Pages:
 
 ```
-https://mawadao.github.io/registry/index.json
+https://mawadao.github.io/marketplace-registry/index.json
 ```
 
 "Trending" is the number of stars a project gained since the previous weekly build.
