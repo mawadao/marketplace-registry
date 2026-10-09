@@ -1,15 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/mawadao/marketplace-registry/schema/listing.schema.json",
-  "title": "mawaDao listing",
-  "description": "One AI tool or agent listed on mawaDao. The file name (without .yaml) is the listing's slug.",
+  "$id": "https://github.com/maavadao/marketplace-registry/schema/listing.schema.json",
+  "title": "maavaDao listing",
+  "description": "One AI tool or agent listed on maavaDao. The file name (without .yaml) is the listing's slug.",
   "type": "object",
   "additionalProperties": false,
   "required": ["kind", "name", "summary", "category", "links", "pricing", "added"],
   "properties": {
     "kind": {
       "enum": ["tool", "agent"],
-      "description": "tool: an AI tool, framework or service people can learn about. agent: a mawa offered in the marketplace."
+      "description": "tool: an AI tool, framework or service people can learn about. agent: a maava offered in the marketplace."
     },
     "name": { "type": "string", "minLength": 1, "maxLength": 80 },
     "summary": {
@@ -71,7 +71,7 @@
       "required": ["runtime", "audience", "languages"],
       "description": "Required for kind: agent.",
       "properties": {
-        "runtime": { "enum": ["mawa-gateway", "mawa-core", "other"] },
+        "runtime": { "enum": ["maava-gateway", "maava-core", "other"] },
         "audience": {
           "type": "string",
           "maxLength": 200,
