@@ -1,0 +1,31 @@
+kind: agent
+name: Compliance Agent
+summary: Checks school and NGO policies, forms and materials against safeguarding and data-protection rules, and flags gaps in plain language.
+description: |
+  Upload a policy, consent form or lesson material and the Compliance Agent reads it against
+  common safeguarding, child data-protection and accessibility checklists. It returns a short
+  list of gaps with suggested wording. It does not give legal advice.
+category: education
+tags: [compliance, safeguarding, policy, schools]
+links:
+  repository: https://github.com/guest-dev/compliance-agent
+license: Apache-2.0
+pricing:
+  education:
+    price: free
+    usage: Unlimited for schools, orphanages, educators and students.
+  individuals:
+    price: free
+    usage: Up to 20 documents a month.
+  business:
+    price: contact
+    usage: Ask the developer.
+agent:
+  runtime: maava-gateway
+  audience: School administrators, teachers and non-profit staff reviewing policies
+  languages: [en, sw]
+  data_collected: Uploaded documents are processed in memory and deleted after the session. No accounts or analytics.
+maintainer:
+  name: Guest Developer
+  github: guest-dev
+added: 2026-10-09

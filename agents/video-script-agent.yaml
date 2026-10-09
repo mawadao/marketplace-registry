@@ -1,0 +1,26 @@
+kind: agent
+name: Video Script Agent
+summary: Helps teachers and students turn a topic into a short, age-appropriate video script with scenes, narration and on-screen text.
+category: video
+tags: [video, scriptwriting, teachers, students]
+links:
+  repository: https://github.com/guest-dev/video-script-agent
+license: Apache-2.0
+pricing:
+  education:
+    price: free
+    usage: Unlimited for schools, orphanages, educators and students.
+  individuals:
+    price: free
+  business:
+    price: contact
+    usage: Ask the developer.
+agent:
+  runtime: maava-core
+  audience: Teachers and students making explainer videos (ages 10 and up)
+  languages: [en, es]
+  data_collected: none
+maintainer:
+  name: Guest Developer
+  github: guest-dev
+added: 2026-10-09
