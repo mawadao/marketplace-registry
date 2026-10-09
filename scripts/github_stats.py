@@ -25,7 +25,7 @@ def _query(token: str, body: str) -> dict:
     req = urllib.request.Request(
         "https://api.github.com/graphql",
         data=json.dumps({"query": body}).encode(),
-        headers={"Authorization": f"bearer {token}", "User-Agent": "mawadao-registry"},
+        headers={"Authorization": f"bearer {token}", "User-Agent": "maavadao-registry"},
     )
     for attempt in range(4):
         try:

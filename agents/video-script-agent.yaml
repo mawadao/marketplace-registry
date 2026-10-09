@@ -16,7 +16,7 @@ pricing:
     price: contact
     usage: Ask the developer.
 agent:
-  runtime: mawa-core
+  runtime: maava-core
   audience: Teachers and students making explainer videos (ages 10 and up)
   languages: [en, es]
   data_collected: none

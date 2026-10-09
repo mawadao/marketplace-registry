@@ -1,5 +1,5 @@
 # Copy this file to agents/<your-agent>.yaml (lowercase letters, digits and hyphens).
-# Agents appear in the mawaDao marketplace once community review passes.
+# Agents appear in the maavaDao marketplace once community review passes.
 kind: agent
 name: Reading Buddy
 summary: Helps young pupils practise reading aloud, with gentle feedback in their own language.
@@ -20,7 +20,7 @@ pricing:
     price: contact
     usage: Ask the developer.
 agent:
-  runtime: mawa-gateway   # or mawa-core, or other
+  runtime: maava-gateway   # or maava-core, or other
   audience: Primary pupils learning to read (ages 6–9)
   languages: [en, sw]
   data_collected: none

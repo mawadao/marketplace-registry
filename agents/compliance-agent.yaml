@@ -21,7 +21,7 @@ pricing:
     price: contact
     usage: Ask the developer.
 agent:
-  runtime: mawa-gateway
+  runtime: maava-gateway
   audience: School administrators, teachers and non-profit staff reviewing policies
   languages: [en, sw]
   data_collected: Uploaded documents are processed in memory and deleted after the session. No accounts or analytics.
